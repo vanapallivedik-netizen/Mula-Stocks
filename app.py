@@ -213,28 +213,122 @@ st.set_page_config(
 )
 init_db()
 
+
 st.markdown("""
 <style>
-    .stApp { background: #0b1020; color: #f4f6fb; }
-    [data-testid="stSidebar"] { background: #11182b; }
-    .hero {
-        padding: 1.25rem 1.5rem; border-radius: 18px;
-        background: linear-gradient(120deg, #152b3b, #17213a);
-        border: 1px solid #263750; margin-bottom: 1rem;
-    }
-    .hero h1 { margin: 0; color: #ffffff; }
-    .hero p { margin: .35rem 0 0; color: #b8c5d8; }
-    div[data-testid="stMetric"] {
-        background: #131d31; border: 1px solid #263750;
-        padding: 14px; border-radius: 14px;
-    }
-    .notice {
-        background: #2b2415; border: 1px solid #695329;
-        padding: .8rem 1rem; border-radius: 10px; color: #f4d99b;
-        margin: .5rem 0 1rem;
-    }
+/* Main background */
+.stApp {
+    background: #080c14;
+    color: #f5f7fa;
+}
+
+[data-testid="stAppViewContainer"] {
+    background: #080c14;
+}
+
+[data-testid="stHeader"] {
+    background: #080c14;
+}
+
+/* Sidebar */
+[data-testid="stSidebar"] {
+    background: #101827;
+    border-right: 1px solid #263449;
+}
+
+[data-testid="stSidebar"] * {
+    color: #e8eef7 !important;
+}
+
+/* Main text */
+[data-testid="stMarkdownContainer"],
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stWidgetLabel"] p,
+.stMarkdown h1, .stMarkdown h2,
+.stMarkdown h3 {
+    color: #f5f7fa !important;
+}
+
+/* Hero banner */
+.hero {
+    padding: 32px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #142b31, #17243b);
+    border: 1px solid #29434a;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    color: white !important;
+    font-size: 42px;
+}
+
+.hero p {
+    color: #aab9c9 !important;
+}
+
+/* Portfolio metric cards */
+[data-testid="stMetric"] {
+    background: #131e2e;
+    border: 1px solid #29394e;
+    padding: 22px;
+    border-radius: 16px;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #aab9c9 !important;
+}
+
+[data-testid="stMetricValue"] {
+    color: #ffffff !important;
+    font-weight: 700;
+}
+
+/* Buttons */
+.stButton button,
+.stFormSubmitButton button {
+    background: #00c878;
+    color: #07140f !important;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    padding: 10px 20px;
+    transition: 0.2s;
+}
+
+.stButton button:hover,
+.stFormSubmitButton button:hover {
+    background: #00e58a;
+    border: none;
+}
+
+/* Input fields */
+.stTextInput input,
+.stNumberInput input {
+    background: #172337;
+    color: white !important;
+    border: 1px solid #34465e;
+    border-radius: 10px;
+}
+
+/* Data tables */
+[data-testid="stDataFrame"] {
+    border: 1px solid #29394e;
+    border-radius: 12px;
+}
+
+/* Alerts */
+[data-testid="stAlert"] {
+    border-radius: 12px;
+}
+
+/* Dividers */
+hr {
+    border-color: #263449;
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 st.markdown("""
 <div class="hero">
